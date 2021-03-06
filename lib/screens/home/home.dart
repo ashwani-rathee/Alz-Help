@@ -1,5 +1,6 @@
 import 'package:alzhelp/models/alz.dart';
 import 'package:alzhelp/models/users.dart';
+import 'package:alzhelp/screens/home/records.dart';
 import 'package:alzhelp/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:alzhelp/services/database.dart';
@@ -19,6 +20,14 @@ class Home extends StatelessWidget {
           context: context,
           builder: (context) {
             return Data();
+          });
+    }
+
+    void _showDataPanel() {
+      showModalBottomSheet(
+          context: context,
+          builder: (context) {
+            return Records();
           });
     }
 
@@ -43,13 +52,18 @@ class Home extends StatelessWidget {
               icon: Icon(Icons.bookmark_border),
               label: Text('records'),
               onPressed: () => _showRecordsPanel(),
+            ),
+            FlatButton.icon(
+              icon: Icon(Icons.data_usage),
+              label: Text('data'),
+              onPressed: () => _showDataPanel(),
             )
           ],
         ),
         // body: Data(),
         body: Stack(
           children: [
-            WebsafeSvg.asset("assets/icons/bg.svg", fit: BoxFit.fill),
+            WebsafeSvg.asset("package:alzhelp/assets/icons/bg.svg", fit: BoxFit.fill),
             SafeArea(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
