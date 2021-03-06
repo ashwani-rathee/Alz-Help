@@ -24,7 +24,7 @@ List<String> days = [
   'Saturday'
 ];
 
-String day = '$currDt.weekday';
+int day = currDt.weekday;
 String date = '$currDt.day';
 int month = currDt.month;
 int year = currDt.year;
@@ -54,8 +54,13 @@ List sample_data = [
   },
   {
     "id": 1,
-    "question": "What is today's day?(from memory - no cheating!)",
-    "options": ['6th', '"$date"th', '12th', '21th'],
+    "question": "What day is today?",
+    "options": [
+      '${days[day - 1]}',
+      '$days[day]',
+      '${days[day + 1]}',
+      '${days[day + 2]}'
+    ],
     "answer_index": 1,
   },
   {

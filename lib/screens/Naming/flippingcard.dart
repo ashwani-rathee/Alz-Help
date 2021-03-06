@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:alzhelp/screens/Naming/flip_card.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
+class Flip_Section extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'FlipCard',
       theme: ThemeData.dark(),
-      home: HomePage(),
+      home: Flip_Section_State(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
+class Flip_Section_State extends StatelessWidget {
   _renderBg() {
     return Container(
       decoration: BoxDecoration(color: const Color(0xFFFFFFFF)),

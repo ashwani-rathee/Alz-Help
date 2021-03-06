@@ -1,3 +1,4 @@
+import 'package:alzhelp/screens/Naming/flippingcard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:alzhelp/constants.dart';
@@ -88,6 +89,25 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                       child: Text(
                         "Orientation Section",
+                        style: Theme.of(context)
+                            .textTheme
+                            .button
+                            .copyWith(color: Colors.black),
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () => Get.to(Flip_Section()),
+                    child: Container(
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(kDefaultPadding * 0.75), // 15
+                      decoration: BoxDecoration(
+                        gradient: kPrimaryGradient,
+                        borderRadius: BorderRadius.all(Radius.circular(12)),
+                      ),
+                      child: Text(
+                        "Flipping Card Section for Naming Section",
                         style: Theme.of(context)
                             .textTheme
                             .button
