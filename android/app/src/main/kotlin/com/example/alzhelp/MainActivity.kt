@@ -1,4 +1,4 @@
-package com.example.alz_help
+package com.example.alzhelp
 
 import io.flutter.embedding.android.FlutterActivity
 

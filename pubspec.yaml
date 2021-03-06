@@ -1,4 +1,4 @@
-name: alz_help
+name: alzhelp
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -24,6 +24,13 @@ dependencies:
   flutter:
     sdk: flutter
 
+  firebase_auth: ^0.20.1
+  cloud_firestore: ^0.16.0+1
+  firebase_core: ^0.7.0
+  provider: ^4.3.3
+  flutter_spinkit: "^4.1.2"
+  get: ^3.24.0
+  websafe_svg: ^1.1.4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
