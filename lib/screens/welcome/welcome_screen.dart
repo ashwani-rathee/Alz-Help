@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:alzhelp/constants.dart';
 import 'package:alzhelp/screens/quiz/quiz_screen.dart';
+import 'package:alzhelp/screens/Naming/naming.dart';
+import 'package:alzhelp/screens/Orientation/quiz_screen.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -48,6 +50,44 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                       child: Text(
                         "Lets Start Quiz",
+                        style: Theme.of(context)
+                            .textTheme
+                            .button
+                            .copyWith(color: Colors.black),
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () => Get.to(NamingScreen()),
+                    child: Container(
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(kDefaultPadding * 0.75), // 15
+                      decoration: BoxDecoration(
+                        gradient: kPrimaryGradient,
+                        borderRadius: BorderRadius.all(Radius.circular(12)),
+                      ),
+                      child: Text(
+                        "Naming Section",
+                        style: Theme.of(context)
+                            .textTheme
+                            .button
+                            .copyWith(color: Colors.black),
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () => Get.to(OrientationScreen()),
+                    child: Container(
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(kDefaultPadding * 0.75), // 15
+                      decoration: BoxDecoration(
+                        gradient: kPrimaryGradient,
+                        borderRadius: BorderRadius.all(Radius.circular(12)),
+                      ),
+                      child: Text(
+                        "Orientation Section",
                         style: Theme.of(context)
                             .textTheme
                             .button
