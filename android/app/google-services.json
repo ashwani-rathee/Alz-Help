@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "139500967197",
+    "project_id": "alzhelp-8ce92",
+    "storage_bucket": "alzhelp-8ce92.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139500967197:android:5f5fbc9ca022d90f08bdf4",
+        "android_client_info": {
+          "package_name": "com.node.alzhelp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "139500967197-vsrbpd4a69s7dfpuo8cuoho35vvbiuov.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.node.alzhelp",
+            "certificate_hash": "d5d088b69ac5f6a8fb10b92d754462a27f22efb7"
+          }
+        },
+        {
+          "client_id": "139500967197-u4vsdnp4pomiv4koojvgte40d73qpomv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARoXUZwU5GvfHmsOhM6h2JJTazDo3rOyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "139500967197-u4vsdnp4pomiv4koojvgte40d73qpomv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

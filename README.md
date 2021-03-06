@@ -1,1 +1,1 @@
-# Alz-Help
+# alzhelp
