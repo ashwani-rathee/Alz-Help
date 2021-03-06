@@ -1,4 +1,5 @@
 import 'package:alzhelp/models/users.dart';
+import 'package:alzhelp/screens/home/home.dart';
 import 'package:alzhelp/screens/home/tutorial.dart';
 import 'package:alzhelp/screens/wrapper.dart';
 import 'package:alzhelp/services/auth.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         home: Wrapper(),
         routes: {
           'tutorial': (context) => Tutorial(),
+          'quizdata': (context) => Quizdata(),
         },
       ),
     );
