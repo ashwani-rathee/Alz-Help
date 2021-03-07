@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
     return StreamProvider<Users>.value(
       value: AuthService().user,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Wrapper(),
         routes: {
           'tutorial': (context) => Tutorial(),

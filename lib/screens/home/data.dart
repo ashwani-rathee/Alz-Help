@@ -1,5 +1,6 @@
 import 'package:alzhelp/models/alz.dart';
 import 'package:alzhelp/services/database.dart';
+import 'package:alzhelp/shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +22,7 @@ class _DataState extends State<Data> {
             UserData userData = snapshot.data;
             print(userData.score);
             return Container(
+              height: MediaQuery.of(context).size.height * 0.35,
               child: Column(
                 children: [
                   SizedBox(
@@ -41,17 +43,7 @@ class _DataState extends State<Data> {
               ),
             );
           } else {
-            return Container(
-              padding: EdgeInsets.symmetric(vertical: 100.0, horizontal: 50.0),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 30.0,
-                  ),
-                  Text("...."),
-                ],
-              ),
-            );
+            return Loading();
           }
         });
   }

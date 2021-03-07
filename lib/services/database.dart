@@ -9,9 +9,16 @@ class DatabaseService {
   // collection reference
   final CollectionReference alzCollection = FirebaseFirestore.instance.collection('alz');
 
-  Future updateUserData(String name, int score) async {
-    return await alzCollection.doc(uid).set({'name': name, 'score': score});
+  Future updateUserData(String name, int score, String dob, String gender, String place) async {
+    return await alzCollection
+        .doc(uid)
+        .set({'name': name, 'score': score, 'dob': dob, 'gender': gender, 'place': place});
   }
+
+  // // add new new data
+  // Future addNewData(String dob, String gender, String place) async {
+  //   return await alzCollection.doc(uid).set({'dob': dob, 'gender': gender, 'place': place});
+  // }
 
   //alz list from snapshot
   List<Alz> _alzListFromSnapshot(QuerySnapshot snapshot) {
@@ -28,7 +35,13 @@ class DatabaseService {
 
   //user data from snapshot
   UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
-    return UserData(uid: uid, name: snapshot.data()['name'], score: snapshot.data()['score']);
+    return UserData(
+        uid: uid,
+        name: snapshot.data()['name'],
+        score: snapshot.data()['score'],
+        gender: snapshot.data()['gender'],
+        place: snapshot.data()['place'],
+        dob: snapshot.data()['dob']);
   }
 
   // get user data stream
