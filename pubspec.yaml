@@ -1,5 +1,5 @@
 name: alzhelp
-description: A new Flutter project.
+description: Dementia Test App
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -33,7 +33,7 @@ dependencies:
   websafe_svg: ^1.1.4
   geocoder: ^0.2.1
   location: 3.2.4
-
+  
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
@@ -65,6 +65,10 @@ flutter:
     - cacti.png
     - church.png
     - structure.png
+    - brain.png
+    - illus1.jpg
+    - grade-sheet.png
+    - care.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
@@ -87,6 +91,9 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-  #
+  fonts:
+    - family: ag
+      fonts:
+      - asset: fonts/ag-book.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -46,8 +46,8 @@ class Home extends StatelessWidget {
       resizeToAvoidBottomInset: true,
       backgroundColor: Colors.brown[50],
       appBar: AppBar(
-        title: Text('Alz Help'),
-        backgroundColor: Colors.brown[400],
+        title: Text('Alz-Help'),
+        backgroundColor: Colors.cyan[200],
         elevation: 0.0,
         actions: <Widget>[
           FlatButton.icon(
@@ -55,7 +55,7 @@ class Home extends StatelessWidget {
               Icons.bookmark_border,
               size: 20,
             ),
-            label: Text('records', textScaleFactor: 0.95),
+            label: Text('Records', textScaleFactor: 0.95),
             onPressed: () => _showRecordsPanel(),
           ),
           FlatButton.icon(
@@ -63,7 +63,7 @@ class Home extends StatelessWidget {
               Icons.data_usage,
               size: 20,
             ),
-            label: Text('data', textScaleFactor: 0.95),
+            label: Text('Data', textScaleFactor: 0.95),
             onPressed: () => _showDataPanel(),
           ),
           FlatButton.icon(
@@ -72,7 +72,7 @@ class Home extends StatelessWidget {
               size: 20,
             ),
             label: Text(
-              'logout',
+              'Log-Out',
               textScaleFactor: 0.95,
             ),
             onPressed: () async {
@@ -92,12 +92,29 @@ class Home extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Spacer(flex: 2), //2/6
+                  Container(
+                    margin: const EdgeInsets.all(3.0),
+                    padding: const EdgeInsets.all(3.0),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.cyan),
+                      borderRadius: BorderRadius.all(Radius.circular(
+                              5.0) //                 <--- border radius here
+                          ),
+                    ),
+                    child: Text(
+                      "Alzheimer's Screening test",
+                      style: Theme.of(context).textTheme.headline4.copyWith(
+                          color: Colors.brown[600],
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'ag'),
+                    ),
+                  ),
+
+                  Spacer(flex: 1), //2/6
                   Text(
-                    "Alzheimer's Screening test",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline4
-                        .copyWith(color: Colors.brown[600], fontWeight: FontWeight.bold),
+                    "Alzheimer's disease is an irreversible, progressive brain disorder that slowly destroys memory and thinking skills and, eventually, the ability to carry out the simplest tasks. In most people with the disease—those with the late-onset type—symptoms first appear in their mid-60s. \nEach MCQ Question holds 10 mark,there are 26 questions in total. \nNormal Person Score: >200/260 \nPerson with disability: <200/260",
+                    style: Theme.of(context).textTheme.headline4.copyWith(
+                        color: Colors.black, fontSize: 20, fontFamily: 'ag'),
                   ),
                   Spacer(), // 1/6
                   InkWell(
@@ -114,7 +131,10 @@ class Home extends StatelessWidget {
                       ),
                       child: Text(
                         "Start Now",
-                        style: Theme.of(context).textTheme.button.copyWith(color: Colors.black),
+                        style: Theme.of(context)
+                            .textTheme
+                            .button
+                            .copyWith(color: Colors.black),
                       ),
                     ),
                   ),

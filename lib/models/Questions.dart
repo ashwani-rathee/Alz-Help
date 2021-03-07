@@ -22,8 +22,10 @@ getUserLocation() async {
     myLocation = null;
   }
   currentLocation = myLocation;
-  final coordinates = new Coordinates(myLocation.latitude, myLocation.longitude);
-  var addresses = await Geocoder.local.findAddressesFromCoordinates(coordinates);
+  final coordinates =
+      new Coordinates(myLocation.latitude, myLocation.longitude);
+  var addresses =
+      await Geocoder.local.findAddressesFromCoordinates(coordinates);
   var first = addresses.first;
   print(
       ' ${first.countryName}, ${first.adminArea},${first.subLocality}, ${first.subAdminArea},${first.addressLine}, ${first.featureName},${first.thoroughfare}, ${first.subThoroughfare}');
@@ -36,7 +38,13 @@ class Question {
   final List<String> options;
   final String imglink;
   final String label;
-  Question({this.id, this.question, this.answer, this.options, this.imglink, this.label});
+  Question(
+      {this.id,
+      this.question,
+      this.answer,
+      this.options,
+      this.imglink,
+      this.label});
 }
 
 var currDt = DateTime.now();
@@ -48,7 +56,15 @@ var currDt = DateTime.now();
 // print(currDt.hour); // 15
 // print(currDt.minute); // 21
 // print(currDt.second); // 49
-List<String> days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+List<String> days = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday'
+];
 
 int day = currDt.weekday;
 int date = currDt.day;
@@ -63,7 +79,7 @@ List sample_data = [
   {
     "id": 1,
     "question": "What is today's date?(from memory - no cheating!)",
-    "options": ['6th', '$day', '12th', '21th'],
+    "options": ['6th', '${day}th', '12th', '21th'],
     "answer_index": 1,
     "imglink": '',
   },
@@ -183,8 +199,9 @@ List sample_data = [
   },
   {
     "id": 18,
-    "question": "Memory Test.Tap on instruction for next question.Remember:",
-    "options": ['Number : 84239'],
+    "question":
+        "Memory Test.Tap on next for next question.Remember: Number : 84239",
+    "options": ['Next'],
     "answer_index": 0,
     "imglink": '',
   },
@@ -205,7 +222,12 @@ List sample_data = [
   {
     "id": 20,
     "question": "Find Analogy: FRAME: PICTURE",
-    "options": ['Criminal: Crime', 'River: Forest', 'Nail: Hammer', 'Binding: Book'],
+    "options": [
+      'Criminal: Crime',
+      'River: Forest',
+      'Nail: Hammer',
+      'Binding: Book'
+    ],
     "answer_index": 3,
     "imglink": '',
   },
@@ -218,9 +240,10 @@ List sample_data = [
   },
   {
     "id": 22,
-    "question": "Memory Test.Tap on instruction for next question.Remember:",
+    "question":
+        "Memory Test.Tap on instruction for next question.Remember: Annie Loves Red,Pennie Loves Green",
     "options": [
-      'Annie Loves Red,Pennie Loves Green',
+      'Next',
     ],
     "answer_index": 0,
     "imglink": '',

@@ -63,11 +63,21 @@ class _Tutorial extends State<Tutorial> {
                 imagePath: mySLides[2].getImageAssetPath(),
                 title: mySLides[2].getTitle(),
                 desc: mySLides[2].getDesc(),
+              ),
+              SlideTile(
+                imagePath: mySLides[3].getImageAssetPath(),
+                title: mySLides[3].getTitle(),
+                desc: mySLides[3].getDesc(),
+              ),
+              SlideTile(
+                imagePath: mySLides[4].getImageAssetPath(),
+                title: mySLides[4].getTitle(),
+                desc: mySLides[4].getDesc(),
               )
             ],
           ),
         ),
-        bottomSheet: slideIndex != 2
+        bottomSheet: slideIndex != 4
             ? Container(
                 margin: EdgeInsets.symmetric(vertical: 16),
                 child: Row(
@@ -90,7 +100,7 @@ class _Tutorial extends State<Tutorial> {
                     Container(
                       child: Row(
                         children: [
-                          for (int i = 0; i < 3; i++)
+                          for (int i = 0; i < 5; i++)
                             i == slideIndex
                                 ? _buildPageIndicator(true)
                                 : _buildPageIndicator(false),
@@ -118,7 +128,7 @@ class _Tutorial extends State<Tutorial> {
             : InkWell(
                 onTap: () {
                   print("Get Started Now");
-                  Navigator.pushNamed(context, 'homepage');
+                  Navigator.pushNamed(context, 'wrapper');
                 },
                 child: Container(
                   height: Platform.isIOS ? 70 : 60,
@@ -225,30 +235,45 @@ List<SliderModel> getSlides() {
 
   //1
   sliderModel.setDesc(
-      "Evolve is a beautifully simple way to to visualize your breathing \n Use Evolve for daily relaxation,mediation or breath training. \n Thank you for downloading Evolve and taking the first step to control+visualize your breathing");
-  sliderModel.setTitle("Tutorial,");
-  sliderModel.setImageAssetPath("assets/orange.png");
+      "Welcome to Alz-Help,which is a dementia test app and is found to be 95-percent effective at identifying persons with memory challenges. \n It does not require a doctor.\n It is based on standardized SAGE and MOCA Tests. ");
+  sliderModel.setTitle("Alz-Help");
+  sliderModel.setImageAssetPath("assets/brain.png");
   slides.add(sliderModel);
 
   sliderModel = new SliderModel();
 
   //2
   sliderModel.setDesc(
-      "This area is for your breath cycle settings. \n\n Breathe In | Hold | Breathe Out | Hold \n\n The number values represent seconds and breath holds are optional");
-  sliderModel.setTitle("Breath Cycles");
-  sliderModel.setImageAssetPath("assets/illustration2.jpg");
+      "We have deliberately kept the test simple.\n If you have experience in dealing with cell phones or tablets you can perform the test yourself.Otherwise you should get help from a support person who has experience in using mobile.\n\n The Quiz consists of 26 MCQ questions with 60 seconds for each question. ");
+  sliderModel.setTitle("Instructions");
+  sliderModel.setImageAssetPath("assets/illus1.jpg");
   slides.add(sliderModel);
 
   sliderModel = new SliderModel();
 
   //3
   sliderModel.setDesc(
-      "Once you select your settings,press start and your session begins immediately \n Return to the menu anytime by pressing STOP.  \n");
-  sliderModel.setTitle("Enjoy !!");
-  sliderModel.setImageAssetPath("assets/illustration3.png");
+      "Please perform the test in quiet and trouble-free environment.\n Please allow about 15 mins to take the test,in which you are unlikely to be distracted. \n Please carry out the test as quickly as possible.");
+  sliderModel.setTitle("Instructions");
+  sliderModel.setImageAssetPath("assets/care.png");
   slides.add(sliderModel);
 
+//4
   sliderModel = new SliderModel();
+
+  sliderModel.setDesc(
+      "When you are done with all the entries.You will be informed about your test result");
+  sliderModel.setTitle("Instructions");
+  sliderModel.setImageAssetPath("assets/grade-sheet.png");
+  slides.add(sliderModel);
+
+  //4
+  sliderModel = new SliderModel();
+
+  sliderModel.setDesc("You are all set to begin");
+  sliderModel.setTitle("All the Best");
+  sliderModel.setImageAssetPath("assets/illustration3.png");
+  slides.add(sliderModel);
 
   return slides;
 }

@@ -24,10 +24,16 @@ class MyApp extends StatelessWidget {
       value: AuthService().user,
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Wrapper(),
+        theme: ThemeData(
+          fontFamily: 'ag',
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: Tutorial(),
         routes: {
           'tutorial': (context) => Tutorial(),
           'quizscreen': (context) => QuizScreen(),
+          'wrapper': (context) => Wrapper(),
         },
       ),
     );
