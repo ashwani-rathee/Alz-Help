@@ -47,7 +47,7 @@ List sample_data = [
   {
     "id": 4,
     "question": "What day is today?",
-    "options": ['${days[0]}', '$days[${day - 1}]', '${days[2]}', '${days[3]}'],
+    "options": ['${days[0]}', '${days[day - 1]}', '${days[2]}', '${days[3]}'],
     "answer_index": 1,
   },
   // {
