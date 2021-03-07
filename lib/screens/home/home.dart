@@ -17,6 +17,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     void _showRecordsPanel() {
       showModalBottomSheet(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(25.0))),
+          isScrollControlled: true,
           context: context,
           builder: (context) {
             return Data();
@@ -24,7 +27,10 @@ class Home extends StatelessWidget {
     }
 
     void _showDataPanel() {
-      showModalBottomSheet(
+      showModalBottomSheet<dynamic>(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(25.0))),
+          isScrollControlled: true,
           context: context,
           builder: (context) {
             return Records();
@@ -35,6 +41,7 @@ class Home extends StatelessWidget {
     return StreamProvider<List<Alz>>.value(
       value: DatabaseService().alz,
       child: Scaffold(
+        resizeToAvoidBottomInset: true,
         backgroundColor: Colors.brown[50],
         appBar: AppBar(
           title: Text('Alz Help'),
