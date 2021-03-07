@@ -1,4 +1,9 @@
 <!-- ABOUT THE PROJECT -->
+
+## Conscious
+<br>
+<i>This repository is for our team's project for hackathon at SF hacks 2021</i>
+
 ### About The Project
 
 Our lapses in memory might include things like,
@@ -30,3 +35,4 @@ An early diagnosis – and access to the right services and support – can help
 It can help people with dementia to have access to relevant information, resources and support, make the most of their abilities and potentially benefit from drug and non-drug treatments available. An early diagnosis gives someone the chance to explain to family and friends the changes happening in their life. On a practical level, a person with dementia may have the opportunity to review their financial situation and discuss with family or legal experts making arrangements for a lasting power of attorney or an advance decision (see Making decisions).
 
 There is strong evidence that an early diagnosis helps someone with dementia to continue to live independently in their own home for longer. This helps to avoid early or unnecessary admission to a care home or hospital, enhancing the quality of life for people with dementia and carers and providing substantial savings on long-term care costs. Drug and non-drug treatment can be more effective the earlier someone is diagnosed.
+
