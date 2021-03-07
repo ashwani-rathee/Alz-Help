@@ -3,8 +3,10 @@ import 'package:alzhelp/models/users.dart';
 import 'package:alzhelp/screens/home/records.dart';
 import 'package:alzhelp/screens/quiz/quiz_screen.dart';
 import 'package:alzhelp/services/auth.dart';
+import 'package:alzhelp/services/location.dart';
 import 'package:flutter/material.dart';
 import 'package:alzhelp/services/database.dart';
+import 'package:location/location.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:alzhelp/screens/home/data.dart';
@@ -92,12 +94,16 @@ class Home extends StatelessWidget {
                   Spacer(flex: 2), //2/6
                   Text(
                     "Alzheimer's Screening test",
-                    style: Theme.of(context).textTheme.headline4.copyWith(
-                        color: Colors.brown[600], fontWeight: FontWeight.bold),
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline4
+                        .copyWith(color: Colors.brown[600], fontWeight: FontWeight.bold),
                   ),
                   Spacer(), // 1/6
                   InkWell(
-                    onTap: () => {Navigator.pushNamed(context, 'quizscreen')},
+                    onTap: () async {
+                      return Navigator.pushNamed(context, 'quizscreen');
+                    },
                     child: Container(
                       width: double.infinity,
                       alignment: Alignment.center,
@@ -108,10 +114,7 @@ class Home extends StatelessWidget {
                       ),
                       child: Text(
                         "Start Now",
-                        style: Theme.of(context)
-                            .textTheme
-                            .button
-                            .copyWith(color: Colors.black),
+                        style: Theme.of(context).textTheme.button.copyWith(color: Colors.black),
                       ),
                     ),
                   ),

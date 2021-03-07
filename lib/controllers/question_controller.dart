@@ -23,7 +23,8 @@ class QuestionController extends GetxController with SingleGetTickerProviderMixi
             id: question['id'],
             question: question['question'],
             options: question['options'],
-            answer: question['answer_index']),
+            answer: question['answer_index'],
+            imglink: question['imglink']),
       )
       .toList();
   List<Question> get questions => this._questions;

@@ -25,22 +25,25 @@ class QuestionCard extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(25),
       ),
-      child: Column(
-        children: [
-          Text(
-            question.question,
-            style: Theme.of(context).textTheme.headline6.copyWith(color: kBlackColor),
-          ),
-          SizedBox(height: kDefaultPadding / 2),
-          ...List.generate(
-            question.options.length,
-            (index) => Option(
-              index: index,
-              text: question.options[index],
-              press: () => _controller.checkAns(question, index),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Text(
+              question.question,
+              style: Theme.of(context).textTheme.headline6.copyWith(color: kBlackColor),
             ),
-          ),
-        ],
+            Image(image: AssetImage(question.imglink)),
+            SizedBox(height: kDefaultPadding / 2),
+            ...List.generate(
+              question.options.length,
+              (index) => Option(
+                index: index,
+                text: question.options[index],
+                press: () => _controller.checkAns(question, index),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

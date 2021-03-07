@@ -5,12 +5,11 @@ import 'package:alzhelp/screens/wrapper.dart';
 import 'package:alzhelp/services/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:location/location.dart';
 import 'package:provider/provider.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() async {
-  var currDt = DateTime.now();
-  print(currDt.weekday);
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
@@ -18,7 +17,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-
+  var location = Location().getLocation();
   @override
   Widget build(BuildContext context) {
     return StreamProvider<Users>.value(
