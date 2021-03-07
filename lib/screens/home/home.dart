@@ -4,11 +4,13 @@ import 'package:alzhelp/screens/home/records.dart';
 import 'package:alzhelp/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:alzhelp/services/database.dart';
+import 'package:alzhelp/screens/welcome/welcome_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:alzhelp/screens/home/data.dart';
 import 'package:get/get.dart';
 import 'package:websafe_svg/websafe_svg.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 class Home extends StatelessWidget {
   final AuthService _auth = AuthService();
@@ -92,10 +94,8 @@ class Home extends StatelessWidget {
                     Spacer(flex: 2), //2/6
                     Text(
                       "Let's Play Quiz,",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline4
-                          .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.headline4.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                     Spacer(), // 1/6
                     InkWell(
@@ -114,10 +114,18 @@ class Home extends StatelessWidget {
                         ),
                         child: Text(
                           "Lets Start The Test",
-                          style: Theme.of(context).textTheme.button.copyWith(color: Colors.black),
+                          style: Theme.of(context)
+                              .textTheme
+                              .button
+                              .copyWith(color: Colors.black),
                         ),
                       ),
                     ),
+                    FlatButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, "quizdata");
+                        },
+                        child: Text("Quiz")),
                     Spacer(flex: 2), // it will take 2/6 spaces
                   ],
                 ),
@@ -126,6 +134,19 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class Quizdata extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      title: 'Quiz App',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
+      home: WelcomeScreen(),
     );
   }
 }
