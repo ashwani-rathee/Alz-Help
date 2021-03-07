@@ -59,6 +59,7 @@ class ScoreScreen extends StatelessWidget {
                           UserData userData = snapshot.data;
                           await DatabaseService(uid: user.uid).updateUserData(
                               userData.name, score, userData.dob, userData.gender, userData.place);
+                          Navigator.pop(context);
                           Get.to(Home());
                         } else {
                           Loading();
