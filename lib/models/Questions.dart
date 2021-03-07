@@ -22,19 +22,15 @@ var currDt = DateTime.now();
 // print(currDt.hour); // 15
 // print(currDt.minute); // 21
 // print(currDt.second); // 49
-<<<<<<< Updated upstream
-List<String> days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-=======
 List<String> days = [
-  'Sunday',
   'Monday',
   'Tuesday',
   'Wednesday',
   'Thursday',
   'Friday',
-  'Saturday'
+  'Saturday',
+  'Sunday'
 ];
->>>>>>> Stashed changes
 
 int day = currDt.weekday;
 int date = currDt.day;
@@ -67,21 +63,7 @@ List sample_data = [
   {
     "id": 4,
     "question": "What day is today?",
-<<<<<<< Updated upstream
-    "options": ['${days[0]}', '${days[day - 1]}', '${days[2]}', '${days[3]}'],
-=======
-<<<<<<< Updated upstream
     "options": ['${days[0]}', '$days[${day - 1}]', '${days[2]}', '${days[3]}'],
->>>>>>> Stashed changes
-    "answer_index": 1,
-=======
-    "options": [
-      // '${days[day - 1]}',
-      // '${days[day]}',
-      // '${days[day + 1]}',
-      // '${days[day + 2]}',
-      'HELLO',
-    ],
     "answer_index": 1,
   },
   {
@@ -115,30 +97,5 @@ List sample_data = [
         "You are buying 13.40 dollar of groceries. How much change would you receive back from a 20 dollar note?",
     "options": ['7.20', '6.30', '6.60', '7.60'],
     "answer_index": 2,
->>>>>>> Stashed changes
-  },
-  // {
-  //   "id": 1,
-  //   "question": "Flutter is an open-source UI software development kit created by ______",
-  //   "options": ['Apple', 'Google', 'Facebook', 'Microsoft'],
-  //   "answer_index": 1,
-  // },
-  // {
-  //   "id": 2,
-  //   "question": "When google release Flutter.",
-  //   "options": ['Jun 2017', 'Jun 2017', 'May 2017', 'May 2018'],
-  //   "answer_index": 2,
-  // },
-  // {
-  //   "id": 3,
-  //   "question": "A memory location that holds a single letter or number.",
-  //   "options": ['Double', 'Int', 'Char', 'Word'],
-  //   "answer_index": 2,
-  // },
-  // {
-  //   "id": 4,
-  //   "question": "What command do you use to output data to the screen?",
-  //   "options": ['Cin', 'Count>>', 'Cout', 'Output>>'],
-  //   "answer_index": 2,
-  // },
+  }
 ];
