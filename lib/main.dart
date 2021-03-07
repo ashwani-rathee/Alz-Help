@@ -8,6 +8,8 @@ import 'package:provider/provider.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() async {
+  var currDt = DateTime.now();
+  print(currDt.weekday);
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
