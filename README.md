@@ -1,6 +1,6 @@
 <!-- ABOUT THE PROJECT -->
 
-## Conscious
+## AlzHelp
 <br>
 <i>This repository is for our team's project for hackathon at SF hacks 2021</i>
 
