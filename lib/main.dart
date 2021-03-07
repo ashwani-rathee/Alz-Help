@@ -1,5 +1,6 @@
 import 'package:alzhelp/models/users.dart';
 import 'package:alzhelp/screens/home/tutorial.dart';
+import 'package:alzhelp/screens/quiz/quiz_screen.dart';
 import 'package:alzhelp/screens/wrapper.dart';
 import 'package:alzhelp/services/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         home: Wrapper(),
         routes: {
           'tutorial': (context) => Tutorial(),
+          'quizscreen': (context) => QuizScreen(),
         },
       ),
     );
