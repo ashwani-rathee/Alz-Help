@@ -100,6 +100,7 @@ class _RecordsState extends State<Records> {
                               _currentGender ?? userData.gender,
                               _currentPlace ?? userData.place);
                         }
+                        Navigator.pop(context);
                       },
                     )
                   ],

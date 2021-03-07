@@ -49,22 +49,34 @@ class Home extends StatelessWidget {
           elevation: 0.0,
           actions: <Widget>[
             FlatButton.icon(
-              icon: Icon(Icons.person),
-              label: Text('logout'),
+              icon: Icon(
+                Icons.bookmark_border,
+                size: 20,
+              ),
+              label: Text('records', textScaleFactor: 0.95),
+              onPressed: () => _showRecordsPanel(),
+            ),
+            FlatButton.icon(
+              icon: Icon(
+                Icons.data_usage,
+                size: 20,
+              ),
+              label: Text('data', textScaleFactor: 0.95),
+              onPressed: () => _showDataPanel(),
+            ),
+            FlatButton.icon(
+              icon: Icon(
+                Icons.person,
+                size: 20,
+              ),
+              label: Text(
+                'logout',
+                textScaleFactor: 0.95,
+              ),
               onPressed: () async {
                 await _auth.signOut();
               },
             ),
-            FlatButton.icon(
-              icon: Icon(Icons.bookmark_border),
-              label: Text('records'),
-              onPressed: () => _showRecordsPanel(),
-            ),
-            FlatButton.icon(
-              icon: Icon(Icons.data_usage),
-              label: Text('data'),
-              onPressed: () => _showDataPanel(),
-            )
           ],
         ),
         // body: Data(),
