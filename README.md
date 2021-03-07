@@ -15,5 +15,5 @@ Dementia/Alzheimer is a syndrome, usually of a chronic or progressive nature, ca
 - A new case of Demntia/Alzheimer is diagnosedevery 3 seconds 
 - The High Cost of the disease will challenge health systems to deal with the predicted Future increase of cases.
 
-#A diagnosis may well provide long-awaited answers for a failing memory, communication problems and changes in behaviour.
+A diagnosis may well provide long-awaited answers for a failing memory, communication problems and changes in behaviour.
 #An early diagnosis opens the door to future care and treatment. It helps people to plan ahead while they are still able to make important decisions on their care and support needs and on financial and legal matters. It also helps them and their families to receive practical information, advice and guidance as they face new challenges
