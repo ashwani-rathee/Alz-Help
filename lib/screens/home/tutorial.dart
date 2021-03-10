@@ -225,8 +225,8 @@ List<SliderModel> getSlides() {
 
   //1
   sliderModel.setDesc(
-      "Evolve is a beautifully simple way to to visualize your breathing \n Use Evolve for daily relaxation,mediation or breath training. \n Thank you for downloading Evolve and taking the first step to control+visualize your breathing");
-  sliderModel.setTitle("Tutorial,");
+      "Welcome to alZhelp,which is a dementia test app and is found to be 95-percent effective at identifying persons with memory challenges. \n It does not require a doctor ");
+  sliderModel.setTitle("About the App");
   sliderModel.setImageAssetPath("assets/orange.png");
   slides.add(sliderModel);
 
@@ -234,8 +234,8 @@ List<SliderModel> getSlides() {
 
   //2
   sliderModel.setDesc(
-      "This area is for your breath cycle settings. \n\n Breathe In | Hold | Breathe Out | Hold \n\n The number values represent seconds and breath holds are optional");
-  sliderModel.setTitle("Breath Cycles");
+      "We have deliberatelt kept the test simple.\n If you have experience in dealing with cell phones or tablets you can perform the test yourself.otherwise you should get help from a support person who has experience in using mobile.*");
+  sliderModel.setTitle("Instructions");
   sliderModel.setImageAssetPath("assets/illustration2.jpg");
   slides.add(sliderModel);
 
@@ -243,12 +243,28 @@ List<SliderModel> getSlides() {
 
   //3
   sliderModel.setDesc(
-      "Once you select your settings,press start and your session begins immediately \n Return to the menu anytime by pressing STOP.  \n");
-  sliderModel.setTitle("Enjoy !!");
+      "please perform the test in quiet and trouble free environment \n please allow about 15 mins to take the test,in which you are unlikely to be distracted \n Please carry out the test as quickly as possible.");
+  sliderModel.setTitle("Instructions");
   sliderModel.setImageAssetPath("assets/illustration3.png");
   slides.add(sliderModel);
 
+//4
   sliderModel = new SliderModel();
+
+    sliderModel.setDesc(
+      "When you are done with all the entries.You will be informed about your test result");
+  sliderModel.setTitle("Instructions");
+  sliderModel.setImageAssetPath("assets/illustration3.png");
+  slides.add(sliderModel);
+
+  //4
+  sliderModel = new SliderModel();
+
+    sliderModel.setDesc(
+      "You are all set to begin");
+  sliderModel.setTitle("All the Best");
+  sliderModel.setImageAssetPath("assets/illustration3.png");
+  slides.add(sliderModel);
 
   return slides;
 }
