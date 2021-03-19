@@ -50,7 +50,7 @@ class QuestionController extends GetxController with SingleGetTickerProviderMixi
   void onInit() {
     // Our animation duration is 60 s
     // so our plan is to fill the progress bar within 60s
-    _animationController = AnimationController(duration: Duration(seconds: 60), vsync: this);
+    _animationController = AnimationController(duration: Duration(seconds: 30), vsync: this);
     _animation = Tween<double>(begin: 0, end: 1).animate(_animationController)
       ..addListener(() {
         // update like setState
@@ -85,7 +85,7 @@ class QuestionController extends GetxController with SingleGetTickerProviderMixi
     update();
 
     // Once user select an ans after 3s it will go to the next qn
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 1), () {
       nextQuestion();
     });
   }

@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:alzhelp/models/users.dart';
 import 'package:alzhelp/screens/home/home.dart';
 import 'package:alzhelp/screens/home/tutorial.dart';
@@ -28,17 +30,15 @@ class ScoreScreen extends StatelessWidget {
                   children: [
                     Spacer(flex: 3),
                     Text(
-                      "Score: " +
-                          score.toString() +
-                          " / ${_qnController.questions.length * 10}",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline3
-                          .copyWith(color: Colors.black),
+                      "Score: " + score.toString() + " / ${_qnController.questions.length * 10}",
+                      style: Theme.of(context).textTheme.headline3.copyWith(color: Colors.black),
                     ),
                     Spacer(flex: 3),
                     InkWell(
-                      onTap: () => Get.to(Home()),
+                      onTap: () {
+                        Navigator.pop(context);
+                        Get.to(Home());
+                      },
                       child: Container(
                         width: MediaQuery.of(context).size.width * 0.75,
                         alignment: Alignment.center,
@@ -49,10 +49,7 @@ class ScoreScreen extends StatelessWidget {
                         ),
                         child: Text(
                           "Go to Home page",
-                          style: Theme.of(context)
-                              .textTheme
-                              .button
-                              .copyWith(color: Colors.black),
+                          style: Theme.of(context).textTheme.button.copyWith(color: Colors.black),
                         ),
                       ),
                     ),
@@ -62,11 +59,7 @@ class ScoreScreen extends StatelessWidget {
                         if (snapshot.hasData) {
                           UserData userData = snapshot.data;
                           await DatabaseService(uid: user.uid).updateUserData(
-                              userData.name,
-                              score,
-                              userData.dob,
-                              userData.gender,
-                              userData.place);
+                              userData.name, score, userData.dob, userData.gender, userData.place);
                           Navigator.pop(context);
                           Get.to(Home());
                         } else {
@@ -84,36 +77,30 @@ class ScoreScreen extends StatelessWidget {
                         ),
                         child: Text(
                           "Save Score to Profile",
-                          style: Theme.of(context)
-                              .textTheme
-                              .button
-                              .copyWith(color: Colors.black),
+                          style: Theme.of(context).textTheme.button.copyWith(color: Colors.black),
                         ),
                       ),
                     ),
                     Spacer(flex: 2),
-                    InkWell(
-                      onTap: () async {
-                        Get.to(Tutorial());
-                      },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.75,
-                        alignment: Alignment.center,
-                        padding: EdgeInsets.all(kDefaultPadding * 0.75), // 15
-                        decoration: BoxDecoration(
-                          gradient: kPrimaryGradient,
-                          borderRadius: BorderRadius.all(Radius.circular(12)),
-                        ),
-                        child: Text(
-                          "Tutorial",
-                          style: Theme.of(context)
-                              .textTheme
-                              .button
-                              .copyWith(color: Colors.black),
-                        ),
-                      ),
-                    ),
-                    Spacer(flex: 2),
+                    // InkWell(
+                    //   onTap: () async {
+                    //     Get.to(Tutorial());
+                    //   },
+                    //   child: Container(
+                    //     width: MediaQuery.of(context).size.width * 0.75,
+                    //     alignment: Alignment.center,
+                    //     padding: EdgeInsets.all(kDefaultPadding * 0.75), // 15
+                    //     decoration: BoxDecoration(
+                    //       gradient: kPrimaryGradient,
+                    //       borderRadius: BorderRadius.all(Radius.circular(12)),
+                    //     ),
+                    //     child: Text(
+                    //       "Tutorial",
+                    //       style: Theme.of(context).textTheme.button.copyWith(color: Colors.black),
+                    //     ),
+                    //   ),
+                    // ),
+                    // Spacer(flex: 2),
                   ],
                 )
               ],
