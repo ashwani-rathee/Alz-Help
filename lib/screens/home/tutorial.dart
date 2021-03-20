@@ -1,5 +1,8 @@
 import 'dart:io';
+import 'package:alzhelp/screens/home/home.dart';
 import 'package:flutter/material.dart';
+import 'package:get/utils.dart';
+import 'package:get/get.dart';
 
 class Tutorial extends StatefulWidget {
   @override
@@ -35,8 +38,7 @@ class _Tutorial extends State<Tutorial> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [const Color(0xff3C8CE7), const Color(0xff00EAFF)])),
+          gradient: LinearGradient(colors: [const Color(0xff3C8CE7), const Color(0xff00EAFF)])),
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Container(
@@ -85,16 +87,13 @@ class _Tutorial extends State<Tutorial> {
                   children: <Widget>[
                     FlatButton(
                       onPressed: () {
-                        controller.animateToPage(2,
-                            duration: Duration(milliseconds: 400),
-                            curve: Curves.linear);
+                        Navigator.pop(context);
+                        Navigator.pushNamed(context, 'wrapper');
                       },
                       splashColor: Colors.blue[50],
                       child: Text(
                         "SKIP",
-                        style: TextStyle(
-                            color: Color(0xFF0074E4),
-                            fontWeight: FontWeight.w600),
+                        style: TextStyle(color: Color(0xFF0074E4), fontWeight: FontWeight.w600),
                       ),
                     ),
                     Container(
@@ -111,15 +110,12 @@ class _Tutorial extends State<Tutorial> {
                       onPressed: () {
                         print("this is slideIndex: $slideIndex");
                         controller.animateToPage(slideIndex + 1,
-                            duration: Duration(milliseconds: 500),
-                            curve: Curves.linear);
+                            duration: Duration(milliseconds: 500), curve: Curves.linear);
                       },
                       splashColor: Colors.blue[50],
                       child: Text(
                         "NEXT",
-                        style: TextStyle(
-                            color: Color(0xFF0074E4),
-                            fontWeight: FontWeight.w600),
+                        style: TextStyle(color: Color(0xFF0074E4), fontWeight: FontWeight.w600),
                       ),
                     ),
                   ],
@@ -127,7 +123,9 @@ class _Tutorial extends State<Tutorial> {
               )
             : InkWell(
                 onTap: () {
+                  Navigator.pop(context);
                   print("Get Started Now");
+
                   Navigator.pushNamed(context, 'wrapper');
                 },
                 child: Container(
@@ -136,8 +134,7 @@ class _Tutorial extends State<Tutorial> {
                   alignment: Alignment.center,
                   child: Text(
                     "GET STARTED NOW",
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.w600),
+                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
                   ),
                 ),
               ),

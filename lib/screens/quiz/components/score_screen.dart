@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:alzhelp/models/users.dart';
 import 'package:alzhelp/screens/home/home.dart';
 import 'package:alzhelp/screens/home/tutorial.dart';
@@ -17,7 +15,9 @@ class ScoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     QuestionController _qnController = Get.put(QuestionController());
     final user = Provider.of<Users>(context);
-    final score = (_qnController.correctAns * 10);
+    final score = (_qnController.numOfCorrectAns * 10);
+    print("---------------");
+    print(score);
     return StreamBuilder<UserData>(
         stream: DatabaseService(uid: user.uid).userData,
         builder: (context, snapshot) {
@@ -30,7 +30,7 @@ class ScoreScreen extends StatelessWidget {
                   children: [
                     Spacer(flex: 3),
                     Text(
-                      "Score: " + score.toString() + " / ${_qnController.questions.length * 10}",
+                      "Score: ${score} / ${_qnController.questions.length * 10}",
                       style: Theme.of(context).textTheme.headline3.copyWith(color: Colors.black),
                     ),
                     Spacer(flex: 3),

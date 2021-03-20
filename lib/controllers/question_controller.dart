@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 import 'package:alzhelp/models/Questions.dart';
-import 'package:alzhelp/screens/score/score_screen.dart';
+import 'package:alzhelp/screens/quiz/components/score_screen.dart';
 
 // We use get package for our state management
 
@@ -79,13 +79,12 @@ class QuestionController extends GetxController with SingleGetTickerProviderMixi
     _selectedAns = selectedIndex;
 
     if (_correctAns == _selectedAns) _numOfCorrectAns++;
-
     // It will stop the counter
     _animationController.stop();
     update();
 
     // Once user select an ans after 3s it will go to the next qn
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(Duration(milliseconds: 500), () {
       nextQuestion();
     });
   }
@@ -93,7 +92,7 @@ class QuestionController extends GetxController with SingleGetTickerProviderMixi
   void nextQuestion() {
     if (_questionNumber.value != _questions.length) {
       _isAnswered = false;
-      _pageController.nextPage(duration: Duration(milliseconds: 250), curve: Curves.ease);
+      _pageController.nextPage(duration: Duration(milliseconds: 150), curve: Curves.ease);
 
       // Reset the counter
       _animationController.reset();
